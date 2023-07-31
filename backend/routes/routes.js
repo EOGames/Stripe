@@ -3,7 +3,7 @@ const { createStripeUser, getStripeCustomer, getAllProducts, chargeCustomer,addC
 const Router = require('express').Router();
 
 Router.post('/createStripeUser',createStripeUser);
-Router.get('/getStripeCustomer/:stripeCustomerId',getStripeCustomer)
+Router.post('/getStripeCustomer',getStripeCustomer);
 Router.get('/getAllProducts',getAllProducts);
 Router.post('/chargeCustomer',chargeCustomer)
 Router.post('/addCard',addCard);
