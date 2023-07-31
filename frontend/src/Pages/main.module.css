@@ -1,0 +1,43 @@
+.productsCardHolder
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.card
+{
+   padding: 2.5rem;
+   background-color: #ccc;
+   border: 1px solid lightgrey;
+   width: 250px;
+   height: 450px;    
+   margin:.5rem;
+   border-radius: 10px;
+}
+
+.addCardButton
+{
+    padding: .5rem;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1px 1px 7px black;
+    transition: all .7s;    
+}
+
+.card div 
+{
+    margin-top: 2%;
+}
+
+.addCardButton:active
+{
+    background-color: rgb(163, 163, 163);
+    transform: scaleX(1.1);
+}

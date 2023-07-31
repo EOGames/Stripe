@@ -11,21 +11,21 @@ export const createStripeUser = async (email) => {
       return response.data;
     }
   } catch (error) {
-    return error;
+    console.log('error',error);
+    return false;
   }
 }
 
-export const getStripeCustomer = async (stripeCustomerId) => {
-  console.log('type',typeof stripeCustomerId,stripeCustomerId);
+//Only one of email or stripe customer id is required data = {email, stripeCustomerId} leave other 
+export const getStripeCustomer = async (data) => {
   try {
-    const response = await api().get(`/getStripeCustomer/${stripeCustomerId}`
-    // , {
-    //   stripeCustomerId: stripeCustomerId,
-    // }
+    const response = await api().post(`/getStripeCustomer`,
+    data    
     );
     return response.data;
   } catch (error) {
-    return error;
+    console.log('Error While Getting Stripe Customer',error);
+    return false;
   }
 }
 
@@ -38,6 +38,7 @@ export const addCard = async (customerStripeId,tokenId) => {
       });
       return response.data;
   } catch (error) {
+    
       return error;
   }
 }

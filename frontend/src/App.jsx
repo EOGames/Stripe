@@ -1,18 +1,22 @@
 import AddCard from "./Pages/AddCard";
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 import Main from "./Pages/Main";
+import { useRef } from "react";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 function App() {
+  const email = useRef('');
+
+  const getEmail = ()=>
+  {
+    return email.current.value;
+  }
   return (
     <div className="App">
-
-      <Main />
-      {/* <Elements stripe={stripePromise}>
-        <AddCard />
-      </Elements> */}
+      <div style={{display:'flex',justifyContent:'center'}}>
+        <input ref={email} type="text" placeholder="email" style={{ height: '40px', outline: 'none', marginTop: '5px',width:'300px' }} />
+      </div>
+      <Main getEmail={getEmail} />
+     
     </div>
   );
 }
